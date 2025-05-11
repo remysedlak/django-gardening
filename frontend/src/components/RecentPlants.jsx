@@ -22,7 +22,7 @@ const Recent = () => {
         {response.slice(0, 4).map((plant) => (
           <div
             key={plant.id}
-            className="bg-yellow-50 w-full md:w-96 hover:bg-yellow-100 transition duration-100 ease-in-out p-2 rounded-lg text-left border-gray-400 border-1 "
+            className="bg-yellow-50 w-full md:w-96 hover:bg-yellow-100 transition duration-100 ease-in-out p-2 text-left border-gray-400 border-1 "
           >
             <h2 className="text-xl inline">{plant.name}</h2>
             <p className="text-gray-700">

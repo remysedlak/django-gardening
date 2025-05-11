@@ -11,12 +11,6 @@ def get_photos(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def plants_needing_water(request):
-    plants = [plant for plant in Plant.objects.all() if plant.needs_watering()]
-    serializer = PlantSerializer(plants, many=True)
-    return Response(serializer.data)
-
-@api_view(['GET'])
 def get_plants(request):
     plants = Plant.objects.prefetch_related('images').all()  # Preload images to avoid N+1 query issue
     serializer = PlantWithLatestImageSerializer(plants, many=True)
@@ -34,7 +28,6 @@ def plants_needing_water(request):
     # Filter at Python level (not ideal at scale — but works fine for now)
     plants = Plant.objects.all()
     needs_water = [plant for plant in plants if plant.needs_watering()]
-    
     serializer = PlantNeedsWateringSerializer(needs_water, many=True)
     return Response(serializer.data)
 

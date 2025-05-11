@@ -10,5 +10,5 @@ urlpatterns = [
     path('plants_needing_water/', views.plants_needing_water),
     path('notes/', views.get_notes),
     path('upload_note/', views.upload_note),
-    path('plants/<int:plant_id>/notes/', views.get_plant_notes, name='plant-notes'),
+    path('plants/<int:plant_id>/notes/', views.get_plant_notes),
 ]

@@ -38,7 +38,7 @@ const Navbar = () => {
       <img
         src="/src/icons/user-white.svg"
         alt="user"
-        className="h-10 absolute right-4 cursor-pointer hover:bg-gray-600 bg-gray-800 p-1 bg-opacity-40 rounded-full"
+        className="h-10 absolute right-4 cursor-pointer hover:bg-gray-600 bg-gray-800 p-1 bg-opacity-40"
         ></img>
       </div>
 
@@ -48,38 +48,38 @@ const Navbar = () => {
 
       {show && (
         <div className="absolute top-16 mx-auto
-         bg-yellow-50 shadow-md p-4 w-full border space-y-3 rounded-xl z-30 items-center justify-center text-center">
+         bg-yellow-50 shadow-md p-4 w-full border space-y-3 z-30 items-center justify-center text-center">
           <Link
             to="/"
-            className="block p-2 border bg-gray-100 rounded-xl hover:bg-gray-300"
+            className="block p-2 border bg-gray-100 hover:bg-gray-300"
             onClick={toggleMenu}
           >
             Home
           </Link>
           <Link
             to="/plants"
-            className="block p-2 border bg-gray-100 rounded-xl hover:bg-gray-300"
+            className="block p-2 border bg-gray-100 hover:bg-gray-300"
             onClick={toggleMenu}
           >
             Plants
           </Link>
           <Link
             to="/gallery"
-            className="block p-2 border bg-gray-100 rounded-xl hover:bg-gray-300"
+            className="block p-2 border bg-gray-100 hover:bg-gray-300"
             onClick={toggleMenu}
           >
             Gallery
           </Link>
           <Link
             to="/analytics"
-            className="block p-2 border bg-gray-100 rounded-xl hover:bg-gray-300"
+            className="block p-2 border bg-gray-100 hover:bg-gray-300"
             onClick={toggleMenu}
           >
             Analytics
           </Link>
           <Link
             to="/analytics"
-            className="block p-2 border bg-gray-100 rounded-xl hover:bg-gray-300"
+            className="block p-2 border bg-gray-100 hover:bg-gray-300"
             onClick={toggleMenu}
           >
             External Resources
