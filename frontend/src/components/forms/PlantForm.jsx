@@ -177,7 +177,7 @@ const PostPlant = ({ onToggle }) => {
             </button>
             <button
               type="submit"
-              className=" bg-green-700 hover:bg-green-600 text-white px-4 py-2border border-gray-400 cursor-pointer"
+              className=" bg-green-700 hover:bg-green-600 text-white px-4 py-2 border border-gray-400 cursor-pointer"
             >
               Upload Plant
             </button>

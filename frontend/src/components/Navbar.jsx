@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const [profile, setProfile] = useState(false);
 
   const toggleMenu = () => {
     setShow(!show);
+  };
+
+  const toggleProfile = () => {
+    setProfile(!profile);
   };
 
   return (
@@ -34,16 +39,32 @@ const Navbar = () => {
           alt="tree"
           className="h-12 ml-4"
         />
-        {/* Logo */}
+        {/* Profile */}
       <img
         src="/src/icons/user-white.svg"
         alt="user"
         className="h-10 absolute right-4 cursor-pointer hover:bg-gray-600 bg-gray-800 p-1 bg-opacity-40"
+        onClick={toggleProfile}
         ></img>
+        {profile && (
+          <div className="absolute top-16 right-4 bg-yellow-50 shadow-md p-4 w-40 border space-y-3 z-30 items-center justify-center text-center">
+            <Link
+              to="/profile"
+              className="block p-2 border bg-gray-100 hover:bg-gray-300"
+              onClick={toggleProfile}
+            >
+              Profile
+            </Link>
+            <Link
+              to="/settings"
+              className="block p-2 border bg-gray-100 hover:bg-gray-300"
+              onClick={toggleProfile}
+            >
+              Settings
+            </Link>
+          </div>
+        )}
       </div>
-
-      
-
       {/* Dropdown Menu */}
 
       {show && (
@@ -78,6 +99,13 @@ const Navbar = () => {
             Analytics
           </Link>
           <Link
+            to="/notes"
+            className="block p-2 border bg-gray-100 hover:bg-gray-300"
+            onClick={toggleMenu}
+          >
+            Plant Notes
+          </Link>
+          <Link
             to="/analytics"
             className="block p-2 border bg-gray-100 hover:bg-gray-300"
             onClick={toggleMenu}
@@ -85,6 +113,7 @@ const Navbar = () => {
             External Resources
           </Link>
         </div>
+
       )}
     </div>
   );

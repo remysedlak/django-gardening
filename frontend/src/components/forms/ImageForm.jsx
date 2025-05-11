@@ -48,8 +48,8 @@ const ImageForm = ({ onToggle }) => {
   };
 
   return (
-    <div className="fixed inset-0 backdrop-blur-[2px] flex items-center justify-center z-50">
-      <div className="bg-gray-200 flex flex-col p-6 rounded-lg shadow-lg w-240 border border-gray-400">
+    <div className="fixed inset-0 bg-gray-800 flex items-center justify-center z-50">
+      <div className="bg-yellow-50 flex flex-col p-6  shadow-lg w-240 border border-gray-400">
         <h2 className="text-xl font-normal mb-4">Add New Plant</h2>
         <form
           onSubmit={handleSubmit}
@@ -62,17 +62,17 @@ const ImageForm = ({ onToggle }) => {
               name="plant"
               value={formData.plant}
               onChange={handleChange}
-              className="bg-blue-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-100 shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             >
               <option
                 value=""
-                className="bg-blue-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="bg-gray-200 shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               >
                 Select a plant
               </option>
               {plants.map((plant) => (
                 <option
-                  className="rounded-full bg-blue-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="bg-gray-200 shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   key={plant.id}
                   value={plant.id}
                 >
@@ -89,7 +89,7 @@ const ImageForm = ({ onToggle }) => {
               name="image"
               accept="image/*"
               onChange={handleFileChange}
-              className="bg-blue-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-100 shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </label>
 
@@ -100,7 +100,7 @@ const ImageForm = ({ onToggle }) => {
               name="description"
               value={formData.description}
               onChange={handleChange}
-              className="bg-blue-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-100 shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </label>
 
@@ -111,20 +111,20 @@ const ImageForm = ({ onToggle }) => {
               name="date_added"
               value={formData.date_added}
               onChange={handleChange}
-              className="bg-blue-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-100 shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </label>
           <div className="flex justify-end">
             <button
               type="button"
-              className="bg-red-400 hover:bg-red-500 text-white px-4 py-2 rounded mr-2 border border-gray-400 cursor-pointer"
+              className="bg-red-700 hover:bg-red-600 text-white px-4 py-2 mr-2 border border-gray-400 cursor-pointer"
               onClick={onToggle}
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-green-400 hover:bg-green-500 text-white px-4 py-2 rounded border border-gray-400 cursor-pointer"
+              className="bg-green700 hover:bg-green-600 text-white px-4 py-2 border border-gray-400 cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
                 if (formData.plant && formData.description && imageFile) {

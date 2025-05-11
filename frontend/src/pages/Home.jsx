@@ -1,6 +1,6 @@
 import React from "react";
-import RecentPlants from "../components/RecentPlants";
-import RecentGallery from "../components/RecentGallery";
+import RecentPlants from "../components/home/RecentPlants";
+import RecentGallery from "../components/home/RecentGallery";
 import NeedsWater from "../components/health/NeedsWater";
 import NeedsRepotted from "../components/health/NeedsRepotted";
 

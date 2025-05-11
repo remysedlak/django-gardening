@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import GetPlants from "../api/GetAllPlants";
+import GetPlants from "../../api/GetAllPlants";
 
 const Recent = () => {
   const [response, setResponse] = useState([]);

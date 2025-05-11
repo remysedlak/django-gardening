@@ -18,8 +18,8 @@ const NeedsWater = () => {
 
   return (
     <div className="flex flex-col p-2 bg-gray-200 md:w-2/5">
-      <h1 className="text-2xl my-2 text-left font-normal">
-        Plants that need watered
+      <h1 className="text-2xl my-2 text-center md:text-left font-normal">
+        Needing Watered
             </h1>
           {/* <NeedsRepotted />
           <NeedsFertilizer /> */}
@@ -39,17 +39,17 @@ const NeedsWater = () => {
               className="bg-yellow-50 border-gray-400 border p-2"
             >
               <div className="flex flex-row justify-between items-center">
-                <h1 className="text-lg font-normal mt-2">{plant.name}</h1>
-                <button className="w-min bg-blue-200 hover:bg-blue-300 border border-gray-400 rounded-xl px-2 hover:cursor-pointer">watered</button>
+                <h1 className="text-lg font-normal">{plant.name}</h1>
+                <button className=" mt-1 w-min bg-blue-100 hover:bg-blue-200 border border-gray-400 rounded-xl px-2 hover:cursor-pointer text-sm">watered</button>
               </div>
             </span>
           ))
         )}
         <span
               
-              className="cursor-pointer bg-yellow-50 hover:bg-yellow-100 border-gray-400 border-dotted border p-2"
+              className="cursor-pointer bg-yellow-50 hover:bg-yellow-100 border-gray-400 border p-2"
               
-            ><h1 className="text-lg font-normal mt-2 text-left">View more...</h1></span>
+            ><h1 className="text-lg font-normal mt-1 text-left">View more...</h1></span>
             
       </div>
     </div>

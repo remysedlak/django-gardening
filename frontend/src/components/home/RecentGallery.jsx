@@ -1,5 +1,5 @@
 import { useEffect, useState, React } from "react";
-import GetPhotos from "../api/GetAllPhotos";
+import GetPhotos from "../../api/GetAllPhotos";
 
 const RecentGallery = () => {
   const [response, setResponse] = useState([]);

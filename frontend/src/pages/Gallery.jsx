@@ -17,8 +17,8 @@ const Gallery = () => {
   return (
     <div className="">
       {showPopup ? <ImageForm onToggle={() => setShowPopup(false)} /> : ``}
-      <h1 className="text-2xl text-left bg-yellow-50 p-2  border-gray-400 border-1 shadow-md">
-        Your Garden 
+      <h1 className="text-2xl font-semibold text-left bg-yellow-50 p-2  border-gray-400 border-1 shadow-md">
+        Your Gallery
       </h1>
       <div className="mx-2 h-full p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-16 mt-4 ">
         {/* Upload Button */}
