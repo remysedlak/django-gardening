@@ -1,1 +1,3 @@
 /django.bat
+/venv/
+*.env
