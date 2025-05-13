@@ -9,7 +9,7 @@ pip install -r requirements.txt
 
 ls -a
 
-cd ./backend/backend
+cd backend
 
 # Convert static asset files
 python manage.py collectstatic --no-input
