@@ -11,4 +11,5 @@ urlpatterns = [
     path('notes/', views.get_notes),
     path('upload_note/', views.upload_note),
     path('plants/<int:plant_id>/notes/', views.get_plant_notes),
+    path('register/', views.RegisterView.as_view(), name='register'),
 ]

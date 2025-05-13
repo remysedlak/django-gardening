@@ -2,6 +2,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from base.models import Plant, PlantImage, Note
 from .serializers import PlantSerializer, PlantImageSerializer, PlantWithLatestImageSerializer, PlantNeedsWateringSerializer, NoteSerializer
+from django.contrib.auth.models import User
 
 @api_view(['GET'])
 def get_photos(request):
@@ -58,3 +59,23 @@ def upload_note(request):
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
+
+from rest_framework import generics
+from rest_framework.permissions import AllowAny
+from rest_framework.serializers import ModelSerializer
+
+class UserSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'password')
+        extra_kwargs = {'password': {'write_only': True}}
+
+    def create(self, validated_data):
+        return User.objects.create_user(**validated_data)
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]

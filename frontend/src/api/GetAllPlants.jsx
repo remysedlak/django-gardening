@@ -3,7 +3,7 @@ import axios from "axios";
 const getPlants = async () => {
   let response;
   try {
-    response = await axios.get("http://127.0.0.1:8000/plants");
+    response = await axios.get("https://django-gardening.onrender.com/plants");
     console.log("Plants:", response.data);
   } catch (error) {
     console.error(
