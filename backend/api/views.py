@@ -24,7 +24,6 @@ def get_notes(request):
 
 @api_view(['GET'])
 def plants_needing_water(request):
-
     # Filter at Python level (not ideal at scale — but works fine for now)
     plants = Plant.objects.all()
     needs_water = [plant for plant in plants if plant.needs_watering()]
