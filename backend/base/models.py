@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import timedelta
+from django.contrib.auth.models import User
 
 class Plant(models.Model):
     SPECIES_CHOICES = [
@@ -11,7 +12,7 @@ class Plant(models.Model):
         ('herb', 'Herb'),
         ('other', 'Other'),
     ]
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='plants')  # associate each plant with a distinct user.
     name = models.CharField(max_length=100, help_text="Name you gave this plant")
     species = models.CharField(max_length=50, choices=SPECIES_CHOICES, default='other')
     scientific_name = models.CharField(max_length=100, blank=True, null=True)
@@ -42,6 +43,7 @@ class Plant(models.Model):
         verbose_name_plural = 'Plants'
 
 class PlantImage(models.Model):
+    
     plant = models.ForeignKey(Plant, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(default='fallback.png', blank=True, upload_to='images/')
     description = models.CharField(max_length=255, blank=True, help_text="Description of the image")
